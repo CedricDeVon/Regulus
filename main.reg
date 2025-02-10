@@ -1,0 +1,93 @@
+PRINT_WITH_NEW_LINE("Password RegEx Validation: \"HelloWorld_1234\"");
+
+PRINT("- ^[A-Za-z0-9!@#$%^&*()\\-_+=]{8,}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[A-Za-z0-9!@#$%^&*()\\-_+=]{8,}$", "HelloWorld_1234"));
+
+PRINT("- [0-9]: ");
+PRINT_WITH_NEW_LINE(REGEX("[0-9]", "HelloWorld_1234"));
+
+PRINT("- [!@#$%^&*()\\-_+=]: ");
+PRINT_WITH_NEW_LINE(REGEX("[!@#$%^&*()\\-_+=]", "HelloWorld_1234"));
+
+
+
+PRINT_WITH_NEW_LINE("\nYYYY-MM-DD Format RegEx Validation: \"2024-02-29\"");
+
+PRINT("- ^[0-9]{4}-[0-9]{2}-[0-9]{2}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[0-9]{4}-[0-9]{2}-[0-9]{2}$", "2024-02-29"));
+
+PRINT("- (Optional) ^..[13579][26]-02-29$: ");
+PRINT_WITH_NEW_LINE(REGEX("^..[13579][26]-02-29$", "2024-02-29"));
+
+PRINT("- (Optional) ^..[02468][048]-02-29$: ");
+PRINT_WITH_NEW_LINE(REGEX("^..[02468][048]-02-29$", "2084-02-29"));
+
+PRINT("- (Optional) ^.....0[13578]-0[1-9]$: ");
+PRINT_WITH_NEW_LINE(REGEX("^.....0[13578]-0[1-9]$", "2084-02-29"));
+
+PRINT("- (Optional) ^.....0[13578]-[12][0-9]$: ");
+PRINT_WITH_NEW_LINE(REGEX("^.....0[13578]-[12][0-9]$", "2084-02-29"));
+
+PRINT("- (Optional) ^.....0[13578]-3[01]$: ");
+PRINT_WITH_NEW_LINE(REGEX("^.....0[13578]-3[01]$", "2084-02-29"));
+
+PRINT("- (Optional) ^.....1[02]-0[1-9]$: ");
+PRINT_WITH_NEW_LINE(REGEX("^.....1[02]-0[1-9]$", "2084-02-29"));
+
+PRINT("- (Optional) ^.....1[02]-[12][0-9]$: ");
+PRINT_WITH_NEW_LINE(REGEX("^.....1[02]-[12][0-9]$", "2084-02-29"));
+
+PRINT("- (Optional) ^.....1[02]-3[01]$: ");
+PRINT_WITH_NEW_LINE(REGEX("^.....1[02]-3[01]$", "2084-02-29"));
+
+
+
+PRINT_WITH_NEW_LINE("\nEmail RegEx Validation: \"vaughn.cedric.lipardo.araneta@gmail.com\"");
+
+PRINT("- ^[a-zA-Z0-9]?[a-zA-Z0-9\\._%+-]{0,63}@[a-zA-Z0-9\\.-]+\\.[a-zA-Z]{2,}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[a-zA-Z0-9]?[a-zA-Z0-9\\._%+-]{0,63}@[a-zA-Z0-9\\.-]+\\.[a-zA-Z]{2,}$", "vaughn.cedric.lipardo.araneta@gmail.com"));
+
+
+
+PRINT_WITH_NEW_LINE("\nPhilippine License Plate RegEx Validation");
+
+PRINT("- ^[A-Z]{3} [0-9]{3,4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[A-Z]{3} [0-9]{3,4}$", "ABC 123"));
+
+PRINT("- ^[A-Z]{3} [0-9]{3,4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[A-Z]{3} [0-9]{3,4}$", "ABC 1234"));
+
+PRINT("- ^[0-9]{4} [A-Z]{2}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[0-9]{4} [A-Z]{2}$", "1234 AB"));
+
+PRINT("- ^[A-Z]{3} [0-9]{3,4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[A-Z]{3} [0-9]{3,4}$", "AAA 1234"));
+
+PRINT("- ^[A-Z]{2,3} [0-9]{3,4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[A-Z]{2,3} [0-9]{3,4}$", "SHP 123"));
+
+PRINT("- ^[A-Z]{2,3} [0-9]{3,4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[A-Z]{2,3} [0-9]{3,4}$", "PMA 123"));
+
+PRINT("- ^CD [0-9]{4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^CD [0-9]{4}$", "CD 1234"));
+
+PRINT("- ^OEV [0-9]{4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^OEV [0-9]{4}$", "OEV 5678"));
+
+PRINT("- ^[A-Z]{3} [0-9]{4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[A-Z]{3} [0-9]{4}$", "TRK 1234"));
+
+PRINT("- ^[A-Z]{3} [0-9]{4}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[A-Z]{3} [0-9]{4}$", "SCO 5678"));
+
+
+
+
+PRINT_WITH_NEW_LINE("\nPhilippine Phone Number RegEx Validation");
+
+PRINT("- (Optional) ^\\+639[0-9]{9}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^\\+639[0-9]{9}$", "+639123456789"));
+
+PRINT("- (Optional) ^[a-zA-Z0-9]?[a-zA-Z0-9\\._%+-]{0,63}@[a-zA-Z0-9\\.-]+\\.[a-zA-Z]{2,}$: ");
+PRINT_WITH_NEW_LINE(REGEX("^[a-zA-Z0-9]?[a-zA-Z0-9\\._%+-]{0,63}@[a-zA-Z0-9\\.-]+\\.[a-zA-Z]{2,}$", "09123456789"));
